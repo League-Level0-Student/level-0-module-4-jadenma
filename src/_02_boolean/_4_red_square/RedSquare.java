@@ -16,7 +16,7 @@ public class RedSquare {
 	public static void main(String[] args) {
 		
 		boolean isRed = true;
-		boolean isSquare = true;
+		boolean isSquare = false;
 		
 		// The && shown here means that both booleans must be true for the 
 		// entire if statement to be true. It is referred to as the "and"
@@ -24,10 +24,10 @@ public class RedSquare {
 		if(isRed && isSquare) {
 			drawRedSquare();
 		}
-		else if (isSquare) {
+		else if (isSquare && !isRed) {
 			drawBlueSquare();
 		}
-		else if (isRed) {
+		else if (isRed && !isSquare) {
 			drawRedTriangle();
 		}
 		else if (!isSquare && !isRed) {
@@ -63,13 +63,17 @@ public class RedSquare {
 		// 7. Write an if statement using the static booleans at the top of 
 		//    the program. If drewRedSquare OR drewBlueSquare are true, then
 		//    tell the user they drew a square in a pop-up. Hint: ||
-		
+		if (drewRedSquare || drewRedSquare ) {
+			JOptionPane.showMessageDialog(null, "You drew a square.");
+		}
 		//    Notice these static booleans start off false, but update to true 
 		//    whenever you call their matching method.
 		
 		// 8. Write an else if statement that tells the user they drew a 
 		//    triangle if drewRedTriangle or drewBlueTriangle are true.
-		
+		else if (drewRedTriangle || drewBlueTriangle) {
+			JOptionPane.showMessageDialog(null, "You drew a triangle.");
+		}
 		// 9. Keep rerunning the program and change the isRed and isSquare 
 		//    variables like you did in step 6. Make sure that when it draws
 		//    a shape that the pop-up correctly says what it drew. 
