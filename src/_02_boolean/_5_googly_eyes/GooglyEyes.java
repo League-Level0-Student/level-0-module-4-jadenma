@@ -56,14 +56,21 @@ face.resize(800, 600);
     @Override
     public void draw() {
 image(face, 0, 0);
-System.out.println(mouseX);
-System.out.println(mouseY);
+//eyes
 fill(255, 255, 255);
 ellipse(315, 324, 125, 80);
 ellipse(483, 324, 125, 80);
+//imaginary rectangle
 fill(0, 0, 0);
-ellipse(277, 310, 30, 30);
-ellipse(519, 331, 30, 30);
+if (mouseX > 355 || mouseX < 235 || mouseY > 360 || mouseY < 275) {
+	ellipse (281, 313, 30, 30);
+	ellipse (523, 334, 30, 30);
+}
+else {
+//pupils
+ellipse(mouseX, mouseY, 30, 30);
+ellipse(mouseX+200, mouseY, 30, 30);
+    }
     }
 
     static public void main(String[] args) {
